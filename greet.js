@@ -1,6 +1,6 @@
 API.chatLog("Variety's Greet Script Commands: /on and /off", true);
 API.on(API.CHAT_COMMAND, command);
-API.on(API.USER_JOIN, greet);
+API.on(API.USER_JOIN, greet, this);
 
 function greet() {
    API.sendChat('Welcome! @' + data.un);
