@@ -7,6 +7,7 @@ API.chatLog("Variety's Greet Script Commands: /on and /off", true);
 API.on(API.CHAT_COMMAND, command);
 API.on(API.USER_JOIN, welcomeUser);
 
+var ROOMNAME = 'Soulful Strut';
 var GREET = true;
 
 function welcomeUser(user) {
