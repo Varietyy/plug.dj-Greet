@@ -8,7 +8,7 @@ API.on(API.CHAT_COMMAND, command);
 API.on(API.USER_JOIN, greet, this);
 
 function greet(data) {
-   API.sendChat('Welcome, ' + data.un + '!');
+   API.sendChat('Welcome! @' + data.username);
 }
 
 function command(value) {
