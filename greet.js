@@ -8,11 +8,12 @@ API.on(API.CHAT_COMMAND, command);
 API.on(API.USER_JOIN, welcomeUser);
 
 var ROOMNAME = 'Soulful Strut';
-var GREET = true;
+var GREET = false;
 
 function welcomeUser(user) {
+   
    if (!GREET) return;
-   setTimeout(function(){API.sendChat('Hey, ' + user.username + ', Welcome to ' + ROOMNAME + '!');}, 5000);
+   setTimeout(function(){API.sendChat('Welcome, ' + user.username + '!');}, 5000);
 }
 
 function command(value) {
