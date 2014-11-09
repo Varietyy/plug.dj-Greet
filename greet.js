@@ -5,19 +5,22 @@
 
 API.chatLog("Variety's Greet Script Commands: /on and /off", true);
 API.on(API.CHAT_COMMAND, command);
-API.on(API.USER_JOIN, greet, this);
+API.on(API.USER_JOIN, welcomeUser);
 
-function greet(data) {
-   setTimeout(function(){API.sendChat('Welcome! @' + data.username);}, 5000);
+var GREET = true;
+
+function welcomeUser(user) {
+   if (!GREET) return;
+   setTimeout(function(){API.sendChat('Hey, ' + user.username + ', Welcome to ' + ROOMNAME + '!');}, 5000);
 }
 
 function command(value) {
     if (value == "/on") {
-        API.on(API.USER_JOIN, greet);
+        API.on(API.USER_JOIN, welcomeUser);
         API.chatLog("Greet [ON]", alert);
     }
     else if (value == "/off") {
-        API.off(API.USER_JOIN, greet);
+        API.off(API.USER_JOIN, welcomeUser);
         API.chatLog("Greet [OFF]", alert);
     }
 }
